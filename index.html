@@ -7,6 +7,7 @@
     <style>
       .container {
         padding: 10px;
+        display: none; /* Initially hide the container in landscape mode */
       }
       .primariaimg {
         margin: 0 auto;
@@ -25,7 +26,7 @@
       }
 
       #landscapeAlert {
-        display: none;
+        display: block; /* Initially show the alert in portrait mode */
         background-color: #f8d7da;
         color: #721c24;
         padding: 20px;
@@ -36,20 +37,24 @@
     </style>
   </head>
   <body>
-    <div id="landscapeAlert">
-      <p>Por favor usa tu télefono de forma horizontal para una mejor experiencia.</p>
-    </div>
-
     <script>
       window.addEventListener("orientationchange", function () {
         var landscapeAlert = document.getElementById("landscapeAlert");
+        var container = document.querySelector(".container");
+
         if (window.innerWidth > window.innerHeight) {
           landscapeAlert.style.display = "none";
+          container.style.display = "block"; /* Show the container in landscape mode */
         } else {
           landscapeAlert.style.display = "block";
+          container.style.display = "none"; /* Hide the container in portrait mode */
         }
       });
     </script>
+
+    <div id="landscapeAlert">
+      <p>Por favor usa tu télefono de forma horizontal para una mejor experiencia.</p>
+    </div>
 
     <div class="container">
       <img
