@@ -43,11 +43,11 @@
         var container = document.querySelector(".container");
 
         if (window.innerWidth > window.innerHeight) {
-          landscapeAlert.style.display = "none";
-          container.style.display = "block"; /* Show the container in landscape mode */
-        } else {
           landscapeAlert.style.display = "block";
-          container.style.display = "none"; /* Hide the container in portrait mode */
+          container.style.display = "none"; /* Show the container in landscape mode */
+        } else {
+          landscapeAlert.style.display = "none";
+          container.style.display = "block"; /* Hide the container in portrait mode */
         }
       });
     </script>
